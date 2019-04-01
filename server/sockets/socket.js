@@ -20,10 +20,10 @@ io.on('connection', (client) => {
     });
 
 
-    client.on('crearMensaje',(data)=>{
-        const persona=usuarios.getPersona(client.id);
-        const mensaje=crearMensaje(persona.nombre,data.mensaje);
-        client.broadcast.emit('crearMensaje',mensaje);
+    client.on('crearMensaje', (data) => {
+        const persona = usuarios.getPersona(client.id);
+        const mensaje = crearMensaje(persona.nombre, data.mensaje);
+        client.broadcast.emit('crearMensaje', mensaje);
     });
 
 
@@ -32,5 +32,11 @@ io.on('connection', (client) => {
         client.broadcast.emit('crearMensaje', crearMensaje('Administrador', `${personaBorrada.nombre} salió`));
         client.broadcast.emit('listaPersonas', usuarios.getPersonas());
     });
+
+    //private messages
+    client.on('privateMessage', data => {
+        const user = usuarios.getPersona(client.id);
+        client.broadcast.to(data.para).emit('privateMessage', crearMensaje(user.nombre, data.message));
+    })
 
 });

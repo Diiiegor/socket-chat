@@ -45,6 +45,11 @@ socket.on('crearMensaje', function (mensaje) {
 });
 
 //cuando un usuario entra o sale del chat recuperatoda la lisa de personas
-socket.on('listaPersonas',function (resp) {
+socket.on('listaPersonas', function (resp) {
     console.log(resp)
+});
+
+//private messages
+socket.on('privateMessage', (message) => {
+    console.log('Private message:', message);
 });
