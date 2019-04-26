@@ -22,10 +22,11 @@ io.on('connection', (client) => {
     });
 
 
-    client.on('crearMensaje', (data) => {
+    client.on('crearMensaje', (data,callback) => {
         const persona = usuarios.getPersona(client.id);
         const mensaje = crearMensaje(persona.nombre, data.mensaje);
         client.broadcast.to(persona.sala).emit('crearMensaje', mensaje);
+        callback(mensaje);
     });
 
 

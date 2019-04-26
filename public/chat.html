@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chat</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Page CSS -->
     <link href="css/pages/chat-app-page.css" rel="stylesheet">
@@ -22,177 +23,137 @@
 
 <body class="fix-header single-column card-no-border fix-sidebar">
 
+<!-- ============================================================== -->
+<!-- Main wrapper -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+
     <!-- ============================================================== -->
-    <!-- Main wrapper -->
+    <!-- Page wrapper  -->
     <!-- ============================================================== -->
-    <div id="main-wrapper">
+    <div class="page-wrapper">
 
         <!-- ============================================================== -->
-        <!-- Page wrapper  -->
+        <!-- Container fluid  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
+        <div class="container-fluid">
+
 
             <!-- ============================================================== -->
-            <!-- Container fluid  -->
+            <!-- Start Page Content -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
+            <div class="row animated fadeIn">
+                <div class="col-12">
+                    <div class="card m-b-0">
+                        <!-- .chat-row -->
+                        <div class="chat-main-box">
+                            <!-- .chat-left-panel -->
+                            <div class="chat-left-aside">
+                                <div class="open-panel"><i class="ti-angle-right"></i></div>
+                                <div class="chat-left-inner">
+                                    <div class="form-material">
+                                        <input class="form-control p-20" type="text" placeholder="Buscar Contacto">
+                                    </div>
+                                    <ul class="chatonline style-none" id="divUsuarios">
 
-
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <div class="row animated fadeIn">
-                    <div class="col-12">
-                        <div class="card m-b-0">
-                            <!-- .chat-row -->
-                            <div class="chat-main-box">
-                                <!-- .chat-left-panel -->
-                                <div class="chat-left-aside">
-                                    <div class="open-panel"><i class="ti-angle-right"></i></div>
-                                    <div class="chat-left-inner">
-                                        <div class="form-material">
-                                            <input class="form-control p-20" type="text" placeholder="Buscar Contacto">
-                                        </div>
-                                        <ul class="chatonline style-none" id="divUsuarios">
-
-                                            <li class="p-20"></li>
-                                        </ul>
+                                        <li class="p-20"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- .chat-left-panel -->
+                            <!-- .chat-right-panel -->
+                            <div class="chat-right-aside">
+                                <div class="chat-main-header">
+                                    <div class="p-20 b-b">
+                                        <h3 class="box-title">Sala de chat
+                                            <small>Video Juegos</small>
+                                        </h3>
                                     </div>
                                 </div>
-                                <!-- .chat-left-panel -->
-                                <!-- .chat-right-panel -->
-                                <div class="chat-right-aside">
-                                    <div class="chat-main-header">
-                                        <div class="p-20 b-b">
-                                            <h3 class="box-title">Sala de chat <small>Video Juegos</small></h3>
-                                        </div>
-                                    </div>
 
-                                    <div class="chat-rbox">
-                                        <ul class="chat-list p-20" id="divChatbox">
-                                            <!--chat Row -->
-                                            <li>
-                                                <div class="chat-img"><img src="assets/images/users/1.jpg" alt="user" /></div>
-                                                <div class="chat-content">
-                                                    <h5>James Anderson</h5>
-                                                    <div class="box bg-light-info">Lorem Ipsum is simply dummy text of the printing & type setting industry.</div>
-                                                </div>
-                                                <div class="chat-time">10:56 am</div>
-                                            </li>
-                                            <!--chat Row -->
-                                            <li>
-                                                <div class="chat-img"><img src="assets/images/users/2.jpg" alt="user" /></div>
-                                                <div class="chat-content">
-                                                    <h5>Bianca Doe</h5>
-                                                    <div class="box bg-light-info">It’s Great opportunity to work.</div>
-                                                </div>
-                                                <div class="chat-time">10:57 am</div>
-                                            </li>
-                                            <!--chat Row -->
-                                            <li class="reverse">
-                                                <div class="chat-content">
-                                                    <h5>Steave Doe</h5>
-                                                    <div class="box bg-light-inverse">It’s Great opportunity to work.</div>
-                                                </div>
-                                                <div class="chat-img"><img src="assets/images/users/5.jpg" alt="user" /></div>
-                                                <div class="chat-time">10:57 am</div>
-                                            </li>
-                                            <!--chat Row -->
-                                            <li class="reverse">
-                                                <div class="chat-content">
-                                                    <h5>Steave Doe</h5>
-                                                    <div class="box bg-light-inverse">It’s Great opportunity to work.</div>
-                                                </div>
-                                                <div class="chat-img"><img src="assets/images/users/5.jpg" alt="user" /></div>
-                                                <div class="chat-time">10:57 am</div>
-                                            </li>
-                                            <!--chat Row -->
-                                            <li>
-                                                <div class="chat-img"><img src="assets/images/users/3.jpg" alt="user" /></div>
-                                                <div class="chat-content">
-                                                    <h5>Angelina Rhodes</h5>
-                                                    <div class="box bg-light-info">Well we have good budget for the project</div>
-                                                </div>
-                                                <div class="chat-time">11:00 am</div>
-                                            </li>
-                                            <!--chat Row -->
+                                <div class="chat-rbox">
+                                    <ul class="chat-list p-20" id="divChatbox">
+                                        <!--chat Row -->
+<!--                                        <li>-->
+<!--                                            <div class="chat-img"><img src="assets/images/users/1.jpg" alt="user"/>-->
+<!--                                            </div>-->
+<!--                                            <div class="chat-content">-->
+<!--                                                <h5>James Anderson</h5>-->
+<!--                                                <div class="box bg-light-info">Lorem Ipsum is simply dummy text of the-->
+<!--                                                    printing & type setting industry.-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="chat-time">10:56 am</div>-->
+<!--                                        </li>-->
+                                        <!--chat Row -->
 
-                                            <!--chat Row -->
-                                            <li>
-                                                <div class="chat-img"><img src="assets/images/users/3.jpg" alt="user" /></div>
-                                                <div class="chat-content">
-                                                    <h5>Angelina Rhodes</h5>
-                                                    <div class="box bg-light-info">Well we have good budget for the project</div>
-                                                </div>
-                                                <div class="chat-time">11:00 am</div>
-                                            </li>
-                                            <!--chat Row -->
+                                        <!--chat Row -->
+<!--                                        <li class="reverse">-->
+<!--                                            <div class="chat-content">-->
+<!--                                                <h5>Steave Doe</h5>-->
+<!--                                                <div class="box bg-light-inverse">It’s Great opportunity to work.</div>-->
+<!--                                            </div>-->
+<!--                                            <div class="chat-img"><img src="assets/images/users/5.jpg" alt="user"/>-->
+<!--                                            </div>-->
+<!--                                            <div class="chat-time">10:57 am</div>-->
+<!--                                        </li>-->
+                                        <!--chat Row -->
 
-                                            <!--chat Row -->
-                                            <li>
-                                                <div class="chat-img"><img src="assets/images/users/3.jpg" alt="user" /></div>
-                                                <div class="chat-content">
-                                                    <h5>Angelina Rhodes</h5>
-                                                    <div class="box bg-light-info">Well we have good budget for the project</div>
-                                                </div>
-                                                <div class="chat-time">11:00 am</div>
-                                            </li>
-                                            <!--chat Row -->
 
-                                        </ul>
-                                    </div>
-                                    <div class="card-body b-t">
+                                    </ul>
+                                </div>
+                                <div class="card-body b-t">
+                                    <form action="" id="formEnviar">
                                         <div class="row">
                                             <div class="col-8">
-                                                <textarea placeholder="Escribe tu mensaje aquí" class="form-control b-0"></textarea>
+                                                <input id="txtMensaje" placeholder="Escribe tu mensaje aquí" class="form-control b-0" autofocus autocomplete="of">
                                             </div>
                                             <div class="col-4 text-right">
-                                                <button type="button" class="btn btn-info btn-circle btn-lg"><i class="fa fa-paper-plane-o"></i> </button>
+                                                <button type="submit" class="btn btn-info btn-circle btn-lg"><i
+                                                        class="fa fa-paper-plane-o"></i></button>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
+
                                 </div>
-                                <!-- .chat-right-panel -->
                             </div>
-                            <!-- /.chat-row -->
+                            <!-- .chat-right-panel -->
                         </div>
+                        <!-- /.chat-row -->
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-
             </div>
             <!-- ============================================================== -->
-            <!-- End Container fluid  -->
+            <!-- End PAge Content -->
             <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer">
-                Super Chat - Fernando Herrera
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+
         </div>
         <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer">
+            Super Chat - Fernando Herrera
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
         <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- End Wrapper -->
+    <!-- End Page wrapper  -->
     <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
 
 
-
-
-
-
-    <script src="js/libs/jquery.min.js"></script>
-    <script src="socket.io/socket.io.js"></script>
-    <script src="js/socket-chat-jquery.js"></script>
-    <script src="js/socket-chat.js"></script>
+<script src="js/libs/jquery.min.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script src="js/socket-chat-jquery.js"></script>
+<script src="js/socket-chat.js"></script>
 
 </body>
 
