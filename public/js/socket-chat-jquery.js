@@ -8,7 +8,7 @@ const sala = paramsurl.get('sala');
 const divUsuarios = $('#divUsuarios');
 const formEnviar = $('#formEnviar');
 const txtMensaje = $('#txtMensaje');
-const divChatbox=$('#divChatbox');
+const divChatbox = $('#divChatbox');
 
 function renderizarUsuarios(personas) {
     var html = '';
@@ -26,18 +26,62 @@ function renderizarUsuarios(personas) {
     divUsuarios.html(html);
 
 }
-function renderizarMensajes( mensaje ){
-    let html='';
-    html+=`<li class="animated fadeIn">
-                <div class="chat-img"><img src="assets/images/users/1.jpg" alt="user"/>
+
+function renderizarMensajes(mensaje, yo) {
+    let html = '';
+    let fecha = new Date(mensaje.fecha);
+    let hora = fecha.getHours() + ":" + fecha.getMinutes();
+    let adminclass="info";
+    if (mensaje.nombre==='Administrador') {
+        adminclass='danger';
+    }
+
+    if (yo) {
+        html += `<li class="reverse">
+        <div class="chat-content">
+            <h5>${mensaje.nombre}</h5>
+            <div class="box bg-light-inverse">${mensaje.mensaje}</div>
+        </div>
+        <div class="chat-img"><img src="assets/images/users/5.jpg" alt="user"/>
+        </div>
+        <div class="chat-time">${hora}</div>
+    </li>`;
+    } else {
+
+        let imagen='';
+        if (mensaje.nombre!=='Administrador'){
+            imagen='<img src="assets/images/users/1.jpg" alt="user"/>';
+        }
+
+        html += `<li class="animated fadeIn">
+                <div class="chat-img">${imagen}
                 </div>
                 <div class="chat-content">
                     <h5>${mensaje.nombre}</h5>
-                    <div class="box bg-light-info">${mensaje.mensaje}</div>
+                    <div class="box bg-light-${adminclass}">${mensaje.mensaje}</div>
                 </div>
-                <div class="chat-time">10:56 am</div>
+                <div class="chat-time">${hora}</div>
             </li>`;
+    }
+
     divChatbox.append(html);
+}
+
+function scrollBottom() {
+
+    // selectors
+    var newMessage = divChatbox.children('li:last-child');
+
+    // heights
+    var clientHeight = divChatbox.prop('clientHeight');
+    var scrollTop = divChatbox.prop('scrollTop');
+    var scrollHeight = divChatbox.prop('scrollHeight');
+    var newMessageHeight = newMessage.innerHeight();
+    var lastMessageHeight = newMessage.prev().innerHeight() || 0;
+
+    if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
+        divChatbox.scrollTop(scrollHeight);
+    }
 }
 
 //listeners
@@ -60,7 +104,8 @@ formEnviar.on('submit', function (e) {
         mensaje: mensaje
     }, function (mensaje) {
         txtMensaje.val('').focus();
-        renderizarMensajes(mensaje)
+        renderizarMensajes(mensaje,true);
+        scrollBottom()
     });
 });
 
